@@ -1,0 +1,37 @@
+$ git log
+commit e3e6d080982ec85a1a074e9c0c4ed6dabc5abbe2 (HEAD -> master, origin/master, origin/bug2, bug2)
+Author: Dona Ivanova <dona.ivanova01@gmail.com>
+Date:   Tue Apr 2 17:18:58 2024 +0200
+
+     Call method makeBigStringFrom in main class
+     CONFLICT SOLVED
+
+commit c8e70d60e6c9c6dd3928c1b9bb2638fbc70e875f
+Author: Dona Ivanova <dona.ivanova01@gmail.com>
+Date:   Tue Apr 2 17:05:31 2024 +0200
+
+    Fix wrong condition in makeBigStringFrom
+
+commit 3a76c26b3a3c4d1fb95dc9ba7cfb06fe88d36b4c (origin/bug1, bug1)
+Author: Dona Ivanova <dona.ivanova01@gmail.com>
+Date:   Tue Apr 2 17:12:27 2024 +0200
+
+     Call method filterOddLengthStrings in main class
+
+commit a7f8e98a9c3594e5824cdd2174d44e08907e7a6b
+Author: Dona Ivanova <dona.ivanova01@gmail.com>
+Date:   Tue Apr 2 17:01:09 2024 +0200
+
+    Fix wrong condition in filterOddLengthStrings
+
+commit ec1c7431408eb3856bc600a182b843e1b1762b8c
+Author: Dona Ivanova <dona.ivanova01@gmail.com>
+Date:   Tue Apr 2 16:40:44 2024 +0200
+
+    Add starter code
+
+commit 93652092a23a9003366215074f881c064b2ffec7
+Author: Dona Ivanova <dona.ivanova01@gmail.com>
+Date:   Tue Apr 2 15:49:41 2024 +0200
+:...skipping...
+

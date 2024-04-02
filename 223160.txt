@@ -1,0 +1,232 @@
+1. instalirano
+2. promeneto
+3. napraveno
+4. Upotrebiv komanda mkdir SI_2024_lab1_223160
+vtora komanda cd SI_2024_lab1_223160
+treta komanda git init SI_2024_lab1_223160
+5. komanda git remote add origin https://github.com/donaivanova/SI_2024_lab1_223160.git
+6. komanda nano README.md
+komanda git commit -m "Inital  commit"
+7. komanda 2x cd ..
+potoa komandi donai@Dell-G3 MINGW64 ~
+$ mv "Downloads/SILab1_1.java" "Documents/SI_2024_lab1_223160"
+
+donai@Dell-G3 MINGW64 ~
+$ mv "Downloads/SILab1Main.java" "Documents/SI_2024_lab1_223160"
+
+donai@Dell-G3 MINGW64 ~
+$ mv "Downloads/SILab1_2.java" "Documents/SI_2024_lab1_223160"
+
+pa komanda git add --all
+pa komanda git commit -m "Add starter code"
+8. upotrebiv komanda  git push origin master
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (8/8), 1.12 KiB | 1.12 MiB/s, done.
+Total 8 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/donaivanova/SI_2024_lab1_223160.git
+ * [new branch]      master -> master
+9.
+donai@Dell-G3 MINGW64 ~/Documents/SI_2024_lab1_223160 (master)
+$ git branch bu1
+
+
+donai@Dell-G3 MINGW64 ~/Documents/SI_2024_lab1_223160 (master)
+$ git branch bug2
+
+donai@Dell-G3 MINGW64 ~/Documents/SI_2024_lab1_223160 (master)
+$ git branch
+  bu1
+  bug2
+* master
+
+10. git checkout bug1
+11. komanda nano SILab1_1.java
+i potoa $ git add .
+i potoa git commit -m "Fix wrong condition in filterOddLengthStrings"
+[bug1 a7f8e98] Fix wrong condition in filterOddLengthStrings
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+12. git checkout bug2
+13. $ nano SILab1_2.java
+i potoa $ git add .
+warning: in the working copy of 'SILab1_2.java', LF will be replaced by CRLF the next time Git touches it
+
+donai@Dell-G3 MINGW64 ~/Documents/SI_2024_lab1_223160 (bug2)
+
+i potoa $ git commit -m "Fix wrong condition in makeBigStringFrom"
+[bug2 546a82a] Fix wrong condition in makeBigStringFrom
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+14. git checkout bug1
+Switched to branch 'bug1'
+
+15. $ nano SILab1Main.java 
+i potoa  git add .
+warning: in the working copy of 'SILab1Main.java', LF will be replaced by CRLF the next time Git touches it
+
+donai@Dell-G3 MINGW64 ~/Documents/SI_2024_lab1_223160 (bug1)
+
+i potoa komandata $ git commit -m " Call method filterOddLengthStrings in main class"
+[bug1 3a76c26]  Call method filterOddLengthStrings in main class
+ 1 file changed, 1 insertion(+)
+
+16. git checkout bug2
+Switched to branch 'bug2'
+
+17. $ nano SILab1Main.java
+ pa potoa komandata git add . 
+i komandata $ git commit -m " Call method makeBigStringFrom in main class"
+
+18. komandata $ git push
+fatal: The current branch bug2 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin bug2
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+ 
+
+komandata  git push --set-upstream origin bug2
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 679 bytes | 679.00 KiB/s, done.
+Total 6 (delta 4), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (4/4), completed with 3 local objects.
+remote:
+remote: Create a pull request for 'bug2' on GitHub by visiting:
+remote:      https://github.com/donaivanova/SI_2024_lab1_223160/pull/new/bug2
+remote:
+To https://github.com/donaivanova/SI_2024_lab1_223160.git
+ * [new branch]      bug2 -> bug2
+branch 'bug2' set up to track 'origin/bug2'.
+
+19. $ git checkout master
+
+20. komandata $ git merge bug1
+Updating ec1c743..3a76c26
+Fast-forward
+ SILab1Main.java | 1 +
+ SILab1_1.java   | 4 ++--
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+pri izvrsuvanje na naredbata, ne se slucija konflikti. ovde e upotrebeno fast-farward strategija.
+
+21. $ git push origin master
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 736 bytes | 736.00 KiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), completed with 2 local objects.
+To https://github.com/donaivanova/SI_2024_lab1_223160.git
+   ec1c743..3a76c26  master -> master
+
+22. git checkout bug2
+Switched to branch 'bug2'
+Your branch is up to date with 'origin/bug2'.
+
+23. $ git rebase master
+Auto-merging SILab1Main.java
+CONFLICT (content): Merge conflict in SILab1Main.java
+error: could not apply b63415c...  Call method makeBigStringFrom in main class
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply b63415c... Call method makeBigStringFrom in main class
+
+ovde ima konflikt vo spojuvanjeto vo SILab1Main.java
+konfliktot go resiv so komandata
+ $ nano SILab1Main.java i ja izbrisav ednata poraka so sto ostana samo edna. 
+
+$ git add SILab1Main.java 
+i potoa komandata git rebase --continue
+
+Call method makeBigStringFrom in main class
+ CONFLICT SOLVED
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# interactive rebase in progress; onto 3a76c26
+# Last commands done (2 commands done):
+#    pick 546a82a Fix wrong condition in makeBigStringFrom
+#    pick b63415c Call method makeBigStringFrom in main class
+# No commands remaining.
+# You are currently rebasing branch 'bug2' on '3a76c26'.
+#
+# Changes to be committed:
+#       modified:   SILab1Main.java
+#
+
+
+24. $ git checkout master
+
+25. git merge bug2
+ovde nema konflikti i se spoi bez problem
+
+26. $ git push origin master
+$ git push origin bug1
+$ git push origin bug2
+To https://github.com/donaivanova/SI_2024_lab1_223160.git
+ ! [rejected]        bug2 -> bug2 (non-fast-forward)
+error: failed to push some refs to 'https://github.com/donaivanova/SI_2024_lab1_223160.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. If you want to integrate the remote changes, use 'git pull'
+hint: before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+27. $ git push --force origin bug2
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/donaivanova/SI_2024_lab1_223160.git
+ + b63415c...e3e6d08 bug2 -> bug2 (forced update)
+
+28. 
+
+$ git log
+commit e3e6d080982ec85a1a074e9c0c4ed6dabc5abbe2 (HEAD -> master, origin/master, origin/bug2, bug2)
+Author: Dona Ivanova <dona.ivanova01@gmail.com>
+Date:   Tue Apr 2 17:18:58 2024 +0200
+
+     Call method makeBigStringFrom in main class
+     CONFLICT SOLVED
+
+commit c8e70d60e6c9c6dd3928c1b9bb2638fbc70e875f
+Author: Dona Ivanova <dona.ivanova01@gmail.com>
+Date:   Tue Apr 2 17:05:31 2024 +0200
+
+    Fix wrong condition in makeBigStringFrom
+
+commit 3a76c26b3a3c4d1fb95dc9ba7cfb06fe88d36b4c (origin/bug1, bug1)
+Author: Dona Ivanova <dona.ivanova01@gmail.com>
+Date:   Tue Apr 2 17:12:27 2024 +0200
+
+     Call method filterOddLengthStrings in main class
+
+commit a7f8e98a9c3594e5824cdd2174d44e08907e7a6b
+Author: Dona Ivanova <dona.ivanova01@gmail.com>
+Date:   Tue Apr 2 17:01:09 2024 +0200
+
+    Fix wrong condition in filterOddLengthStrings
+
+commit ec1c7431408eb3856bc600a182b843e1b1762b8c
+Author: Dona Ivanova <dona.ivanova01@gmail.com>
+Date:   Tue Apr 2 16:40:44 2024 +0200
+
+    Add starter code
+
+commit 93652092a23a9003366215074f881c064b2ffec7
+Author: Dona Ivanova <dona.ivanova01@gmail.com>
+Date:   Tue Apr 2 15:49:41 2024 +0200
+:...skipping...
+
+$ nano logs.txt
+$nano 223160.txt
+$git add .
+$git commit -m "Final commit"
+$git push origin master
